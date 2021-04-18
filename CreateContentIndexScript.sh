@@ -1,3 +1,4 @@
+baseLink=`echo "https://github.com/c4arl0s/"`
 if test ! -s README.md
 then 
     touch README.md
@@ -15,18 +16,16 @@ index=0
 cat $1 | while read line
 do 
     let index=$index+1
-    enumeratedLine=`echo "$index. [$line]()"`  
+    ## finalLine = enumeratedLine + (baseLink+processedRNWS+masterLine)
+    enumeratedLine=`echo "$index. [$line]"`
+    masterLine=`echo "#$index-$line" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';'`
+    finalLine=`echo "$enumeratedLine($baseLink$processedRNWS$masterLine)"`
     # replace white spaces with -, replace upper case with lower case, remove ('), \47 is the octal value of it (')
-    processedLine=`echo $line | tr ' ' '-' | tr '[A-Z]' '[a-z]'| tr '.' '-' | tr -d '\47'`
-    titleLine=`echo $enumeratedLine | sed "s/]()/]($processedLine)/"`
-    linkLine=`echo $titleLine | sed "s/^/# /"`
-    masterLine=`echo "#$enumeratedLine" | tr ' ' '-' | tr -d '.' | tr -d ']()' | tr -d '[' | tr -d ':'`
-    enumeratedLinePlusLink=`echo $enumeratedLine | sed "s/]()/](https:\/\/github.com\/c4arl0s\/$processedRNWS$masterLine)/"`
-    echo $enumeratedLinePlusLink
-    echo "$enumeratedLinePlusLink" >> README.md
+    echo $finalLine
+    echo "$finalLine" >> README.md
 done
 echo "" >> README.md
-echo "# [$2](https://github.com/c4arl0s/#$processedRepositoryName---content)" >> README.md
+echo "# [$repositoryName](https://github.com/c4arl0s/#$processedRepositoryName---content)" >> README.md
 echo "" >> README.md
 cat $1 | while read line
 do 

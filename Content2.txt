@@ -1,0 +1,13 @@
+Floating point numbers
+Absolute and relative errors
+Roundoff and truncation errors
+The remainder term in Taylor's formula
+Lagrange interpolation
+Newton interpolation
+Hermite interpolation
+The error of the Newton interpolation polynomial
+Finite differences
+Newton interpolation with equidistant points
+The Lagrange form of Hermite interpolation
+Solution of nonlinear equations
+Programs for solving nonlinear equation
