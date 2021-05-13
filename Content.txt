@@ -1,75 +1,27 @@
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
-The writer’s schema and the reader’s schema
+Formats for Encoding Data
+Language-Specific Formats
+JSON, XML, and Binary Variants
+Binary encoding
+Thrift and Protocol Buffers
+Field tags and schema evolution
+Datatypes and schema evolution
+Avro
+The writer’s schema and the reader’s schema
+Schema evolution rules
+But what is the writer’s schema?
+Dynamically generated schemas
+Code generation and dynamically typed languages
+The Merits of Schemas
+Modes of Dataflow
+Dataflow Through Databases
+Different values written at different times
+Archival storage
+Dataflow Through Services: REST and RPC
+Web services
+The problems with remote procedure calls (RPCs)
+Current directions for RPC
+Data encoding and evolution for RPC
+Message-Passing Dataflow
+Message brokers
+Distributed actor frameworks
+Summary
