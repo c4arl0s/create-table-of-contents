@@ -1,6 +1,9 @@
 Formats for Encoding Data
+Surprice!
 Language-Specific Formats
 JSON, XML, and Binary Variants
+$500 dolar prize
+What is the percentage?: 100%
 Binary encoding
 Thrift and Protocol Buffers
 Field tags and schema evolution

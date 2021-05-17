@@ -18,7 +18,7 @@ do
     let index=$index+1
     ## finalLine = enumeratedLine + (baseLink+processedRNWS+masterLine)
     enumeratedLine=`echo "$index. [$line]"`
-    masterLine=`echo "#$index-$line" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?'`
+    masterLine=`echo "#$index-$line" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?' | tr -d '!'| tr -d '%'`
     finalLine=`echo "$enumeratedLine($baseLink$processedRNWS$masterLine)"`
     # replace white spaces with -, replace upper case with lower case, remove ('), \47 is the octal value of it (')
     echo $finalLine
