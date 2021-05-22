@@ -32,9 +32,9 @@
 28. [ ] [28. Message brokers](https://github.com/c4arl0s/createcontentindexscript#28-Message-brokers)
 29. [ ] [29. Distributed actor frameworks](https://github.com/c4arl0s/createcontentindexscript#29-Distributed-actor-frameworks)
 30. [ ] [30. Summary](https://github.com/c4arl0s/createcontentindexscript#30-Summary)
-31. [ ] [31. This is a test for @testable](https://github.com/c4arl0s/createcontentindexscript#31-This-is-a-test-for-@testable)
+31. [ ] [31. This is a test for @testable](https://github.com/c4arl0s/createcontentindexscript#31-This-is-a-test-for-testable)
 
-# [Create Content index Script](https://github.com/c4arl0s/#create-content-index-script---content)
+# [Create Content index Script](https://github.com/c4arl0s/#createcontentindexscriptcreate-content-index-script---content)
 
 # 1. [Formats for Encoding Data](https://github.com/c4arl0s/createcontentindexscript#create-content-index-script---content)
 # 2. [Surprice!](https://github.com/c4arl0s/createcontentindexscript#create-content-index-script---content)

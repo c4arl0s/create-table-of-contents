@@ -25,7 +25,7 @@ do
     echo "$finalLine" >> README.md
 done
 echo "" >> README.md
-echo "# [$repositoryName](https://github.com/c4arl0s/#$processedRepositoryName---content)" >> README.md
+echo "# [$repositoryName](https://github.com/c4arl0s/$processedRNWS#$processedRepositoryName---content)" >> README.md
 echo "" >> README.md
 cat $1 | while read line
 do 
