@@ -1,10 +1,4 @@
 baseLink=`echo "https://github.com/c4arl0s/"`
-if test ! -s README.md
-then 
-    touch README.md
-else 
-    cp README.md backUpREADME.md
-fi
 repositoryName=$2
 processedRepositoryName=`echo $repositoryName | tr '[A-Z]' '[a-z]' | tr ' ' '-'`
 processedRNWS=`echo $repositoryName | tr '[A-Z]' '[a-z]' | tr -d ' '`
