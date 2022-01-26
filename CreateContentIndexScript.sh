@@ -1,5 +1,7 @@
-baseLink=`echo "https://github.com/c4arl0s/"`
-repositoryName=$2
+#!/bin/bash
+userName=`git config --list | grep user.name | cut -f 2 -d "="`
+baseLink=`echo "https://github.com/$userName/"`
+repositoryName=`pwd | rev | cut -d '/' -f 1 | rev`
 processedRepositoryName=`echo $repositoryName | tr '[A-Z]' '[a-z]' | tr ' ' '-'`
 processedRNWS=`echo $repositoryName | tr '[A-Z]' '[a-z]' | tr -d ' '`
 echo "# [go back to Overview](https://github.com/c4arl0s)" > README.md
