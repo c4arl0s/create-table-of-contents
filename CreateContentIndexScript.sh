@@ -1,32 +1,33 @@
 #!/bin/bash
-userName=`git config --list | grep user.name | cut -f 2 -d "="`
-baseLink=`echo "https://github.com/$userName/"`
-repositoryName=`pwd | rev | cut -d '/' -f 1 | rev`
-processedRepositoryName=`echo $repositoryName | tr '[A-Z]' '[a-z]' | tr ' ' '-'`
-processedRNWS=`echo $repositoryName | tr '[A-Z]' '[a-z]' | tr -d ' '`
+
+USER_NAME=`git config --list | grep user.name | cut -f 2 -d "="`
+USER_URL=`echo "https://github.com/$USER_NAME/"`
+REPOSITORY_NAME=`pwd | rev | cut -d '/' -f 1 | rev`
+PROCESSED_REPOSITORY_NAME=`echo $REPOSITORY_NAME | tr '[A-Z]' '[a-z]' | tr ' ' '-'`
+PROCESSED_RNWS=`echo $REPOSITORY_NAME | tr '[A-Z]' '[a-z]' | tr -d ' '`
 echo "# [go back to Overview](https://github.com/c4arl0s)" > README.md
 echo "" >> README.md
-echo "# [$repositoryName - Content](https://github.com/c4arl0s/$processedRNWS#go-back-to-overview)" >> README.md
+echo "# [$REPOSITORY_NAME - Content](https://github.com/c4arl0s/$PROCESSED_RNWS#go-back-to-overview)" >> README.md
 echo "" >> README.md
-index=0
-cat $1 | while read line
+INDEX=0
+cat $1 | while read LINE
 do 
-    let index=$index+1
-    ## finalLine = enumeratedLine + (baseLink+processedRNWS+masterLine)
-    enumeratedLine=`echo "$index. [ ] [$index. $line]"`
-    masterLine=`echo "#$index-$line" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?' | tr -d '!'| tr -d '%' | tr -d '@'`
-    finalLine=`echo "$enumeratedLine($baseLink$processedRNWS$masterLine)"`
+    let INDEX=$INDEX+1
+    # FINAL_LINE = ENUMERATED_LINE + (USER_URL+PROCESSED_RNWS+MASTER_LINE)
+    ENUMERATED_LINE=`echo "$INDEX. [ ] [$INDEX. $LINE]"`
+    MASTER_LINE=`echo "#$INDEX-$LINE" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?' | tr -d '!'| tr -d '%' | tr -d '@'`
+    FINAL_LINE=`echo "$ENUMERATED_LINE($USER_URL$PROCESSED_RNWS$MASTER_LINE)"`
     # replace white spaces with -, replace upper case with lower case, remove ('), \47 is the octal value of it (')
-    echo $finalLine
-    echo "$finalLine" >> README.md
+    echo $FINAL_LINE
+    echo "$FINAL_LINE" >> README.md
 done
 echo "" >> README.md
-echo "# [$repositoryName](https://github.com/c4arl0s/$processedRNWS#$processedRepositoryName---content)" >> README.md
+echo "# [$REPOSITORY_NAME](https://github.com/c4arl0s/$PROCESSED_RNWS#$PROCESSED_REPOSITORY_NAME---content)" >> README.md
 echo "" >> README.md
-cat $1 | while read line
+cat $1 | while read LINE
 do 
-    let index=$index+1
-    enumeratedLine=`echo "# $index. [$line](https://github.com/c4arl0s/$processedRNWS#$processedRepositoryName---content)"` 
-    echo "$enumeratedLine"
-    echo "$enumeratedLine" >> README.md
+    let INDEX=$INDEX+1
+    ENUMERATED_LINE=`echo "# $INDEX. [$LINE](https://github.com/c4arl0s/$PROCESSED_RNWS#$PROCESSED_REPOSITORY_NAME---content)"` 
+    echo "$ENUMERATED_LINE"
+    echo "$ENUMERATED_LINE" >> README.md
 done
