@@ -4,7 +4,7 @@ This script was born by necessity to create a content index for my projects. It 
 
 ### how to use it ?
 
-You just have to pass as parameter to the script the name of the directory where is contained all you content index, for example: `Content.txt`. So,
+You just have to pass as parameter to the script the name of the txt file where is contained all your conten, for example: `Content.txt`. So,
 
 # Code
 
