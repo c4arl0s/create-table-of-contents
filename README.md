@@ -8,7 +8,7 @@ You just have to pass as parameter to the script the name of the txt file where 
 
 # Code
 
-```console
+```bash
 #!/bin/bash
 
 USER_NAME=`git config --list | grep user.name | cut -f 2 -d "="`
