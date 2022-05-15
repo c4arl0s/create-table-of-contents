@@ -24,6 +24,7 @@ done
 echo "" >> README.md
 echo "# [$REPOSITORY_NAME](https://github.com/c4arl0s/$PROCESSED_RNWS#$PROCESSED_REPOSITORY_NAME---content)" >> README.md
 echo "" >> README.md
+INDEX=0
 cat $1 | while read LINE
 do 
     let INDEX=$INDEX+1
