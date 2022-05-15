@@ -20,6 +20,7 @@ do
     # replace white spaces with -, replace upper case with lower case, remove ('), \47 is the octal value of it (')
     echo $FINAL_LINE
     echo "$FINAL_LINE" >> README.md
+    gh issue create --title "$INDEX $LINE" --body "$INDEX $LINE"
 done
 echo "" >> README.md
 echo "# [$REPOSITORY_NAME](https://github.com/c4arl0s/$PROCESSED_RNWS#$PROCESSED_REPOSITORY_NAME---content)" >> README.md
