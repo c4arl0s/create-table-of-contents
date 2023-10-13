@@ -1,8 +1,14 @@
-### Create content index Script
+# Create content index Script
 
-This script was born by necessity to create a content index for my projects. It creates the correct link to each topic, according to markdown syntax.
+This script was born by necessity to create a content index for my projects. It creates the correct link to each topic, according to markdown syntax it also creates an issue on github using gh command line tool.
 
-### how to use it ?
+# Dependencies
+
+```console
+brew install gh
+```
+
+# how to use it ?
 
 You just have to pass as parameter to the script the name of the txt file where is contained all your conten, for example: `Content.txt`. So,
 
