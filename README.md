@@ -1,6 +1,6 @@
-# Create content index Script
+# Create Table of Contents Script
 
-This script was born by necessity to create a content index for my projects. It creates the correct link to each topic, according to markdown syntax it also creates an issue on github using gh command line tool.
+This script was born by necessity to create a Table of Contents for my projects. It creates the correct link to each topic, according to markdown syntax it also creates an issue on github using `gh` command line tool.
 
 # Dependencies
 
@@ -10,7 +10,11 @@ brew install gh
 
 # how to use it ?
 
-You just have to pass as parameter to the script the name of the txt file where is contained all your conten, for example: `Content.txt`. So,
+You just have to pass as parameter to the script the name of the txt file where is contained all your conten, for example: `content.txt`. So,
+
+```console
+./create-table-of-contents content.txt
+```
 
 # Code
 
@@ -53,10 +57,10 @@ done
 Console output:
 
 ```console
-$ ./CreateContentIndexScript Content.txt
+$ ./create-table-of-contents content.txt
 ```
 
-This is how it looks `Content.txt`:
+This is how it looks `content.txt`:
 
 ```txt
 Formats for Encoding Data
