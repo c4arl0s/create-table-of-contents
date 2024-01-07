@@ -1,11 +1,11 @@
 #!/bin/bash
 
-USER_NAME=`git config --list | grep user.name | cut -f 2 -d "="`
-USER_URL=`echo "https://github.com/$USER_NAME"`
+user_name=$(git config --list | grep user.name | cut -f 2 -d "=")
+USER_URL=`echo "https://github.com/${user_name}"`
 REPOSITORY_NAME=`pwd | rev | cut -d '/' -f 1 | rev`
 PROCESSED_REPOSITORY_NAME=`echo $REPOSITORY_NAME | tr '[A-Z]' '[a-z]' | tr ' ' '-'`
 PROCESSED_RNWS=`echo $REPOSITORY_NAME | tr '[A-Z]' '[a-z]' | tr -d ' '`
-echo "# [go back to Overview]($USER_NAME)" > README.md
+echo "# [go back to Overview](${user_name})" > README.md
 echo "" >> README.md
 echo "# [$REPOSITORY_NAME - Content]($USER_URL/$PROCESSED_RNWS#go-back-to-overview)" >> README.md
 echo "" >> README.md
