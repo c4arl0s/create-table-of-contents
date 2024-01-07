@@ -14,8 +14,8 @@ cat $1 | while read line
 do 
     let index=${index}+1
     enumerated_line=$(echo "${index}. [ ] [${index}. ${line}]")
-    MASTER_LINE=`echo "#${index}-${line}" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?' | tr -d '!'| tr -d '%' | tr -d '@'`
-    FINAL_LINE=`echo "${enumerated_line}(${user_url}/${processed_rnws}$MASTER_LINE)"`
+    master_line=$(echo "#${index}-${line}" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?' | tr -d '!'| tr -d '%' | tr -d '@')
+    FINAL_LINE=`echo "${enumerated_line}(${user_url}/${processed_rnws}${master_line})"`
     # replace white spaces with -, replace upper case with lower case, remove ('), \47 is the octal value of it (')
     echo $FINAL_LINE
     echo "$FINAL_LINE" >> README.md
