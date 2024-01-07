@@ -28,7 +28,7 @@ index=0
 cat $1 | while read line
 do 
     let index=${index}+1
-    enumerated_line=`echo "# ${index}. [${line}](${user_url}/${processed_rnws}#${processed_repository_name}---content)"` 
+    enumerated_line=$(echo "# ${index}. [${line}](${user_url}/${processed_rnws}#${processed_repository_name}---content)")
     echo "${enumerated_line}"
     echo "${enumerated_line}" >> README.md
 done
