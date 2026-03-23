@@ -1,5 +1,15 @@
 #!/bin/bash
 
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 <content-file>"
+  return 1
+fi
+
+if [[ ! -f "$1" ]]; then
+  echo "Error: file not found: $1"
+  return 1
+fi
+
 user_name=$(git config --list | grep user.name | cut -f 2 -d "=")
 user_url=$(echo "https://github.com/${user_name}")
 repository_name=$(pwd | rev | cut -d '/' -f 1 | rev)
