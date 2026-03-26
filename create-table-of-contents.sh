@@ -1,13 +1,17 @@
 #!/bin/bash
 
-if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <content-file>"
-  return 1
-fi
+error() {
+  echo "🔴 $(date +'%Y-%m-%dT%H:%M:%S%z') ERROR: $*" >&2
+}
 
-if [[ ! -f "$1" ]]; then
-  echo "Error: file not found: $1"
-  return 1
+warning() {
+  echo "🟡 $(date +'%Y-%m-%dT%H:%M:%S%z') WARNING: $*"
+}
+
+if [[ $# -lt 1 ]]; then
+  error "File not found: $1"
+  error "Pass a txt file as parameter"
+  exit 1
 fi
 
 user_name=$(git config --list | grep user.name | cut -f 2 -d "=")
@@ -23,7 +27,31 @@ echo "" >> README.md
 index=$(wc -l < $1 | xargs)
 cat $1 | tac | while read line; do 
   enumerated_line=$(echo "${index}. [ ] [${index}. ${line}]")
-  master_line=$(echo "#${index}-${line}" | tr ' ' '-' | tr -d '.'| tr -d ']()'  | tr -d '[' | tr -d ':' | tr -d '\47' | tr -d '>' | tr -d ',' | tr -d '/' | tr -d '\46' | tr -d '$' | tr -d ';' | tr -d '|' | tr -d '\302' | tr -d '\251' | tr -d '\303' | tr -d '\140' | tr -d '’' | tr -d '?' | tr -d '!'| tr -d '%' | tr -d '@')
+  master_line=$(
+    echo "#${index}-${line}" \
+      | tr ' ' '-' \
+      | tr -d '.' \
+      | tr -d ']()' \
+      | tr -d '[' \
+      | tr -d ':' \
+      | tr -d '\47' \
+      | tr -d '>' \
+      | tr -d ',' \
+      | tr -d '/' \
+      | tr -d '\46' \
+      | tr -d '$' \
+      | tr -d ';' \
+      | tr -d '|' \
+      | tr -d '\302' \
+      | tr -d '\251' \
+      | tr -d '\303' \
+      | tr -d '\140' \
+      | tr -d '’' \
+      | tr -d '?' \
+      | tr -d '!' \
+      | tr -d '%' \
+      | tr -d '@'
+  )
   final_line=$(echo "${enumerated_line}(${user_url}/${processed_rnws}${master_line})")
   echo ${final_line}
   echo "${final_line}" >> /private/var/tmp/README.md
