@@ -1,4 +1,4 @@
-### Create Table of Contents – Auto-generate a browsable README index from any list
+### readme-navigator – Auto-generate a browsable README index from any list, it helps you to navigate through your new project.
 
 This repository provides a bash script that turns a plain text list into a clean, browsable Table of Contents in your README, with correctly anchored Markdown links and optional GitHub Issues creation via the `gh` CLI. It’s ideal for learning repos, notes, or docs where you want a living, navigable index that scales as content grows.
 
@@ -19,12 +19,10 @@ This repository provides a bash script that turns a plain text list into a clean
 
 - Usage
   - Prepare a `Content.txt` (one title per line)
-  - Run: `./create-table-of-contents.sh Content.txt`
-  - Commit the updated `README.md`
+  - Run: `readme-navigator Content.txt`
+  - Commit the updated `README.md` file.
 
 - Key details
   - Auto-normalizes titles (lowercasing, dashifying, removing unsafe chars)
   - Generates both a checklist-style TOC and a sectioned outline
   - Works in any repo; detects repo/user from local git config
-
-Repository: https://github.com/c4arl0s/create-table-of-contents
