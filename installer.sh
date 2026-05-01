@@ -3,8 +3,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOURCE_SCRIPT="${SCRIPT_DIR}/readme-navigator.sh"
-TARGET_LINK="/usr/local/bin/readme-navigator"
+SOURCE_SCRIPT="${SCRIPT_DIR}/readmefy.sh"
+TARGET_LINK="/usr/local/bin/readmefy"
 
 if [[ ! -f "${SOURCE_SCRIPT}" ]]; then
   echo "Error: source script not found at ${SOURCE_SCRIPT}"
@@ -23,4 +23,4 @@ echo "${TARGET_LINK} -> ${SOURCE_SCRIPT}"
 sudo ln -s "${SOURCE_SCRIPT}" "${TARGET_LINK}"
 
 echo "Installation complete."
-echo "Run it with: readme-navigator <content-file>"
+echo "Run it with: readmefy <content-file>"
